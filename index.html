@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Clínica Nuestra Señora - Excelencia Médica</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+    rel="stylesheet">
+  <!-- Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#eaf1ff",
+            "primary-fixed-dim": "#b6c6ef",
+            "tertiary": "#0d1918",
+            "on-tertiary": "#ffffff",
+            "secondary-container": "#57aafe",
+            "on-secondary-fixed-variant": "#00497e",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#dce9ff",
+            "surface-container": "#e5eeff",
+            "on-surface-variant": "#44474e",
+            "surface-container-low": "#eff4ff",
+            "surface": "#f8f9ff",
+            "background": "#f8f9ff",
+            "on-background": "#0b1c30",
+            "on-surface": "#0b1c30",
+            "on-tertiary-container": "#889693",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "inverse-primary": "#b6c6ef",
+            "tertiary-fixed": "#d7e5e2",
+            "on-tertiary-fixed": "#121e1c",
+            "outline": "#75777f",
+            "inverse-surface": "#213145",
+            "surface-tint": "#4e5e81",
+            "tertiary-fixed-dim": "#bcc9c7",
+            "on-tertiary-fixed-variant": "#3d4947",
+            "on-primary-fixed": "#081b3a",
+            "on-secondary-fixed": "#001d36",
+            "primary": "#031635",
+            "surface-container-highest": "#d3e4fe",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "surface-dim": "#cbdbf5",
+            "outline-variant": "#c5c6cf",
+            "surface-variant": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#364768",
+            "primary-container": "#1a2b4b",
+            "surface-bright": "#f8f9ff",
+            "secondary-fixed": "#d2e4ff",
+            "secondary-fixed-dim": "#9fcaff",
+            "secondary": "#0061a5",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#003d6b",
+            "on-primary-container": "#8293b8",
+            "primary-fixed": "#d8e2ff",
+            "tertiary-container": "#222e2c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "md": "24px",
+            "sm": "12px",
+            "lg": "48px",
+            "gutter": "24px",
+            "xl": "80px",
+            "xs": "4px",
+            "base": "8px",
+            "container-max": "1280px"
+          },
+          "fontFamily": {
+            "headline-sm": ["manrope"],
+            "headline-md": ["manrope"],
+            "body-md": ["inter"],
+            "body-lg": ["inter"],
+            "headline-lg": ["manrope"],
+            "display-lg": ["manrope"],
+            "headline-lg-mobile": ["manrope"],
+            "body-sm": ["inter"],
+            "label-md": ["inter"]
+          },
+          "fontSize": {
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+  <!-- TopNavBar -->
+  <header
+    class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline shadow-sm transition-all duration-200 ease-in-out">
+    <div class="flex justify-between items-center h-20 px-md max-w-container-max mx-auto">
+      <div class="flex items-center gap-xs w-40">
+        <img class="w-full" src="images/HORIZONTAL.png" />
+      </div>
+      <nav class="hidden md:flex items-center gap-lg">
+        <a class="font-body-md text-body-md text-secondary font-bold border-b-2 border-secondary pb-1 transition-colors"
+          href="#inicio">Inicio</a>
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+          href="#servicios">Servicios</a>
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+          href="#especialistas">Especialistas</a>
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+          href="#citas">Citas</a>
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+          href="#contacto">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-md">
+        <button class="md:hidden p-2">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-surface-container-low" id="inicio">
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-surface-container-low/80 to-transparent z-10">
+        </div>
+        <img class="w-full h-full object-cover object-right"
+          data-alt="A wide professional photograph of a modern, bright clinical hallway with glass walls and minimalist architectural details. The lighting is bright and clean, characteristic of a high-end medical facility. The color palette is dominated by whites and soft medical blues, reflecting a hygienic and calm atmosphere with clinical precision."
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4HclkI6q8ZZXE3H_DnZmZhJkWkJ6q4rN3Tc4Etqo-s3JPs9yUI-x-RT-quwi8f85IMDsKG2l4WP5ARvrLMWOIFS0CnVSJDPWv5NbSD6SNJeIObJ6wIshZpaJenc5WvyumBedhBO91mP5NRdW10xj1HuZJpz0scscr5WSav1R0JPoX8z0Kq-Rh8SZXvwctYtcrlj7ACmnR0WjRaZ-A0PE4kZB7AnKpDkNV3OewdQd9iCdDgQrPR6qIRr7ZQ8Loua4PKWogwajN64hE">
+      </div>
+      <div class="relative z-20 max-w-container-max mx-auto px-md w-full">
+        <div class="max-w-2xl space-y-md">
+          <div
+            class="inline-flex items-center gap-xs px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md">
+            <span class="material-symbols-outlined text-[16px]"
+              style="font-variation-settings: 'FILL' 1;">verified</span>
+            Cuidado de Confianza
+          </div>
+          <h1 class="font-display-lg text-display-lg text-primary leading-tight">
+            Tu salud es nuestra <span class="text-secondary">prioridad</span>
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Combinamos la precisión tecnológica con la calidez humana para brindarte el mejor cuidado médico. En Clínica
+            Nuestra Señora, tu bienestar está en las mejores manos.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-md pt-base">
+            <a class="inline-flex items-center justify-center px-lg py-4 bg-primary text-on-primary rounded-lg font-headline-sm text-headline-sm hover:bg-primary-container transition-all shadow-md"
+              href="#citas">
+              Agendar Cita
+              <span class="material-symbols-outlined ml-2">calendar_month</span>
+            </a>
+            <a class="inline-flex items-center justify-center px-lg py-4 border-2 border-primary text-primary rounded-lg font-headline-sm text-headline-sm hover:bg-surface-container-high transition-all"
+              href="#servicios">
+              Ver Servicios
+            </a>
+          </div>
+          <div class="grid grid-cols-3 gap-md pt-xl opacity-80">
+            <div class="flex flex-col">
+              <span class="font-headline-md text-headline-md text-primary">25+</span>
+              <span class="text-body-sm text-on-surface-variant">Especialidades</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-headline-md text-headline-md text-primary">150+</span>
+              <span class="text-body-sm text-on-surface-variant">Especialistas</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-headline-md text-headline-md text-primary">24h</span>
+              <span class="text-body-sm text-on-surface-variant">Urgencias</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section: Bento Grid -->
+    <section class="py-xl bg-white" id="servicios">
+      <div class="max-w-container-max mx-auto px-md">
+        <div class="text-center mb-xl space-y-xs">
+          <h2 class="font-headline-lg text-headline-lg text-primary">Nuestros Servicios Médicos</h2>
+          <p class="text-on-surface-variant max-w-2xl mx-auto">Ofrecemos una atención integral con tecnología de
+            vanguardia en todas nuestras áreas de especialización.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter h-full"><!-- Ultrasonido -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-secondary hover:shadow-xl transition-all p-lg flex flex-col justify-between">
+            <div class="space-y-sm">
+              <span class="material-symbols-outlined text-secondary text-4xl">settings_accessibility</span>
+              <h3 class="font-headline-md text-headline-md text-primary">Ultrasonido</h3>
+              <p class="text-on-surface-variant text-sm">Diagnóstico por imagen no invasivo con tecnología de alta
+                resolución para estudios detallados.</p>
+            </div>
+            <button class="w-fit text-secondary font-bold hover:underline flex items-center mt-md">
+              Saber más <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+            </button>
+          </div>
+          <!-- Rayos X -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-secondary hover:shadow-xl transition-all p-lg flex flex-col justify-between">
+            <div class="space-y-sm">
+              <span class="material-symbols-outlined text-secondary text-4xl">radiology</span>
+              <h3 class="font-headline-md text-headline-md text-primary">Rayos X</h3>
+              <p class="text-on-surface-variant text-sm">Radiografía digital de alta precisión para un diagnóstico
+                rápido y efectivo de estructuras óseas.</p>
+            </div>
+            <button class="w-fit text-secondary font-bold hover:underline flex items-center mt-md">
+              Saber más <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+            </button>
+          </div>
+          <!-- Mamografía -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-secondary hover:shadow-xl transition-all p-lg flex flex-col justify-between">
+            <div class="space-y-sm">
+              <span class="material-symbols-outlined text-secondary text-4xl">female</span>
+              <h3 class="font-headline-md text-headline-md text-primary">Mamografía</h3>
+              <p class="text-on-surface-variant text-sm">Detección temprana y prevención con equipos de mamografía
+                digital de baja dosis.</p>
+            </div>
+            <button class="w-fit text-secondary font-bold hover:underline flex items-center mt-md">
+              Saber más <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+            </button>
+          </div>
+          <!-- TAC -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-secondary hover:shadow-xl transition-all p-lg flex flex-col justify-between">
+            <div class="space-y-sm">
+              <span class="material-symbols-outlined text-secondary text-4xl">biotech</span>
+              <h3 class="font-headline-md text-headline-md text-primary">TAC</h3>
+              <p class="text-on-surface-variant text-sm">Tomografía axial computarizada para obtener imágenes
+                tridimensionales detalladas del cuerpo.</p>
+            </div>
+            <button class="w-fit text-secondary font-bold hover:underline flex items-center mt-md">
+              Saber más <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+            </button>
+          </div>
+          <!-- Odontología -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-secondary hover:shadow-xl transition-all p-lg flex flex-col justify-between">
+            <div class="space-y-sm">
+              <span class="material-symbols-outlined text-secondary text-4xl">dentistry</span>
+              <h3 class="font-headline-md text-headline-md text-primary">Odontología</h3>
+              <p class="text-on-surface-variant text-sm">Cuidado integral de tu salud bucal con especialistas en
+                estética y restauración dental.</p>
+            </div>
+            <button class="w-fit text-secondary font-bold hover:underline flex items-center mt-md">
+              Saber más <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+            </button>
+          </div>
+          <!-- Laboratorio -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-secondary hover:shadow-xl transition-all p-lg flex flex-col justify-between">
+            <div class="space-y-sm">
+              <span class="material-symbols-outlined text-secondary text-4xl">science</span>
+              <h3 class="font-headline-md text-headline-md text-primary">Laboratorio</h3>
+              <p class="text-on-surface-variant text-sm">Análisis clínicos completos con resultados precisos y entrega
+                en tiempo récord.</p>
+            </div>
+            <button class="w-fit text-secondary font-bold hover:underline flex items-center mt-md">
+              Saber más <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Specialists Section -->
+    <section class="py-xl bg-surface-container-low" id="especialistas">
+      <div class="max-w-container-max mx-auto px-md">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
+          <div class="space-y-xs">
+            <h2 class="font-headline-lg text-headline-lg text-primary">Nuestros Especialistas</h2>
+            <p class="text-on-surface-variant max-w-xl">Conoce al equipo de profesionales comprometidos con tu bienestar
+              y salud.</p>
+          </div>
+          <button
+            class="px-md py-2 border border-outline text-primary rounded-lg hover:bg-surface-container-high transition-all flex items-center">
+            Ver todo el equipo <span class="material-symbols-outlined ml-2">groups</span>
+          </button>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+          <!-- Specialist 1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+            <div class="h-80 overflow-hidden relative">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A portrait of a male doctor in his 40s, wearing a white lab coat and a stethoscope. He has a friendly, professional smile and is standing in a brightly lit modern clinic environment. The photography is clean, sharp, and corporate, emphasizing trust and compassion. High key lighting with soft shadows."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWkz0_9OIACQy3HOb4QBuPVTCsyWbktTmcT2U79maTm3t2l4wV7zH6QxKb9Ye9vxio11lP-60fpgznT--O2D9GUXLx97LYfD-IzDrKBtoGvUfE58fvun44mAr6dGV8Dhx07abvlnTiQZdEwS6OcOWTyh5Lap8hc1qVsL1UekDT-9faEDPrTCgbq-rYDjTimC-xLHNZz5YEGc2YzrEv8dwZqG1pCTYGvNsL1xHkNVIjZRC-YT2Ih8sPhIT6GKX9s_XSjeePLuykFLg-">
+            </div>
+            <div class="p-md space-y-xs text-center">
+              <h4 class="font-headline-sm text-headline-sm text-primary">Dr. Alejandro Ruiz</h4>
+              <p class="text-secondary font-label-md text-label-md uppercase tracking-wider">Cardiólogo Jefe</p>
+              <div class="flex justify-center gap-xs pt-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+            </div>
+          </div>
+          <!-- Specialist 2 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+            <div class="h-80 overflow-hidden relative">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A portrait of a female doctor in her late 30s, wearing professional medical attire. She has a confident and approachable expression, set against a background of a modern clinical consultation room. The image uses a soft, neutral color palette of greys and medical blues. Elegant lighting highlights her professional and compassionate persona."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeDBUJDI5K26MXH6sWCfMaWuJse97W92yyuS4HQFofjbp4IHuq_zNwbcfkrzzXZwEEBHii2qmu1C5sMEp_dAojlrvvD159meYZFj_d9Q84RILxCrzFu9r1OAzgyQfafagGf72PUt9o6dEf5IdKUWTJ6KRm-rW-PxrvKjtAd8KGzjEEoOSdaMl7B8LIL2QPVJmj3_iZw5YNHTz-ZDeWmh61Tg0s0TWPCEB8uJk9TDDTV08igUFgUlE6wvUmuKdJh8Uv2BluWZSsm5-e">
+            </div>
+            <div class="p-md space-y-xs text-center">
+              <h4 class="font-headline-sm text-headline-sm text-primary">Dra. Elena Martínez</h4>
+              <p class="text-secondary font-label-md text-label-md uppercase tracking-wider">Directora de Pediatría</p>
+              <div class="flex justify-center gap-xs pt-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+            </div>
+          </div>
+          <!-- Specialist 3 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+            <div class="h-80 overflow-hidden relative">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Professional portrait of a male specialist in medicine, late 50s, projecting wisdom and experience. He wears a dark blue medical scrub under a white coat. The background is a blurred high-tech medical laboratory. The lighting is sophisticated, creating a sense of clinical authority and human warmth."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQjh95bL9wKlTOijlIZMFDtBv8Zg9jw2EWHLkq94qCgsaPwfSZammNZF4KyWGHDB-PKIXzLr_bqZTmTfHSiFFDmHVqdF8vhHgrixtPKWg7x2fCpq40qS4Ho8yNRaWwBa0_wulHrwUd6ftu2a3jHGjkAogsBAAX0xLZUK9xxDEUW1PCF8tn9p1XZlkugK8i1R4HtSRitU_GS_R63rfsxzNqJTPYXrzfg3OJum-E9RIJ5vMWrklC16Xedx865FSVMllBW9tFHGZ0yJcL">
+            </div>
+            <div class="p-md space-y-xs text-center">
+              <h4 class="font-headline-sm text-headline-sm text-primary">Dr. Roberto Gómez</h4>
+              <p class="text-secondary font-label-md text-label-md uppercase tracking-wider">Neurocirujano</p>
+              <div class="flex justify-center gap-xs pt-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+            </div>
+          </div>
+          <!-- Specialist 4 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+            <div class="h-80 overflow-hidden relative">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A portrait of a smiling female doctor in her 30s, looking directly at the camera with kindness. She is in a modern office with subtle medical equipment in the background. The scene is bright and airy with high-key lighting. The color palette features whites and soft teal accents, conveying professional reliability and human empathy."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZGH5o1XgEgXUW1OlKBfaZJC42gwvkDBARwdVeXZDo_LAiTAby0AF9DvCd295Pl4reVkiAmn6jSDrqUmwk9kEKGqvWeYbF35kxJiTq_YkReq7DPBslM2VLqsv7kDHU0sQREXBXCBCIHUoN6uWULzeOFL1e-W8-LpBVuovAwd3NtlsIswfrY5nVvgUYgwYb7DeVKA4YPHG9RsLvxF9LUjFCnsFcwqpSiDzvi5B8p9DI6ieHx31Ubxr_fOP7DIL9sSRgC0AAn5eRW6oa">
+            </div>
+            <div class="p-md space-y-xs text-center">
+              <h4 class="font-headline-sm text-headline-sm text-primary">Dra. Claudia Silva</h4>
+              <p class="text-secondary font-label-md text-label-md uppercase tracking-wider">Medicina Interna</p>
+              <div class="flex justify-center gap-xs pt-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Appointment & Contact Section -->
+    <section class="py-xl bg-white overflow-hidden" id="citas">
+      <div class="max-w-container-max mx-auto px-md">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+          <!-- Contact/Form side -->
+          <div class="space-y-lg">
+            <div class="space-y-sm">
+              <h2 class="font-headline-lg text-headline-lg text-primary">Reserva tu cita hoy</h2>
+              <p class="text-on-surface-variant">Completa el formulario y nuestro equipo de atención al paciente se
+                pondrá en contacto contigo en menos de 24 horas.</p>
+            </div>
+            <form
+              class="space-y-md bg-surface-container-low p-md lg:p-lg rounded-xl shadow-sm border border-outline-variant">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+                <div class="space-y-xs">
+                  <label class="block font-label-md text-label-md text-on-surface-variant">Nombre Completo</label>
+                  <input
+                    class="w-full px-md py-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none bg-white"
+                    placeholder="Ej. Juan Pérez" type="text">
+                </div>
+                <div class="space-y-xs">
+                  <label class="block font-label-md text-label-md text-on-surface-variant">Teléfono</label>
+                  <input
+                    class="w-full px-md py-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none bg-white"
+                    placeholder="900 000 000" type="tel">
+                </div>
+              </div>
+              <div class="space-y-xs">
+                <label class="block font-label-md text-label-md text-on-surface-variant">Especialidad</label>
+                <select
+                  class="w-full px-md py-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none bg-white">
+                  <option>Seleccione una opción</option>
+                  <option>Medicina General</option>
+                  <option>Pediatría</option>
+                  <option>Cardiología</option>
+                  <option>Ginecología</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div class="space-y-xs">
+                <label class="block font-label-md text-label-md text-on-surface-variant">Mensaje (Opcional)</label>
+                <textarea
+                  class="w-full px-md py-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none bg-white resize-none"
+                  placeholder="¿Cómo podemos ayudarte?" rows="4"></textarea>
+              </div>
+              <button
+                class="w-full py-4 bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-all shadow-md flex justify-center items-center gap-2"
+                type="submit">
+                Confirmar Solicitud
+                <span class="material-symbols-outlined">send</span>
+              </button>
+            </form>
+          </div>
+          <!-- Map/Location side -->
+          <div class="space-y-lg" id="contacto">
+            <div class="rounded-2xl overflow-hidden h-[400px] shadow-lg border border-outline-variant relative">
+              <!-- Placeholder for actual map -->
+              <div
+                class="absolute inset-0 bg-surface-container-high flex flex-col items-center justify-center space-y-md text-center p-md">
+                <img class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale" data-location="Madrid"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUP9NU00k8ceNFRScR0luXRVHiC-JaTiccGiAOpnJcLF9OArFVDsv3vJuhyH_D7rm4_HGABAYiG0YmgCoiOufCr2zofAOoBPnmLIEhuabJZT-pTc7oWsb7AHmRggwYYwc3bvEz6Dr_rFL8sA2inE2Cw_RfEv_9I53L2rzQ7hh4oFFpiVxbiahbZtwP2pjDWPUy2NRauXJPAzBt5GYYiOZsHnNw7tFrNMUYZJaV1K1puhA3PsoG_YaJ9Zc5X0XuyIN7UegeD1zoTzF1">
+                <div class="relative z-10 glass-effect p-md rounded-xl shadow-md border border-white">
+                  <span class="material-symbols-outlined text-secondary text-4xl mb-sm block">location_on</span>
+                  <h4 class="font-headline-sm text-headline-sm text-primary">Nuestra Ubicación</h4>
+                  <p class="text-on-surface-variant text-sm">Calle de la Salud 123,<br>28001 Madrid, España</p>
+                  <button class="mt-md text-secondary font-bold text-sm hover:underline">Abrir en Google Maps</button>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+              <div class="flex items-start gap-md p-md bg-surface-container-low rounded-xl">
+                <div class="bg-secondary-fixed p-2 rounded-lg">
+                  <span class="material-symbols-outlined text-secondary">mail</span>
+                </div>
+                <div>
+                  <p class="font-label-md text-label-md text-on-surface-variant">Email</p>
+                  <p class="font-body-md text-body-md text-primary font-semibold">contacto@clinicans.com</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-md p-md bg-surface-container-low rounded-xl">
+                <div class="bg-secondary-fixed p-2 rounded-lg">
+                  <span class="material-symbols-outlined text-secondary">schedule</span>
+                </div>
+                <div>
+                  <p class="font-label-md text-label-md text-on-surface-variant">Horario</p>
+                  <p class="font-body-md text-body-md text-primary font-semibold">24 horas / 7 días</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer
+    class="w-full pt-xl pb-lg bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-md max-w-container-max mx-auto">
+      <div class="space-y-md">
+        <div class="flex items-center gap-xs">
+          <span class="material-symbols-outlined text-secondary-fixed text-2xl"
+            style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+          <span class="font-headline-sm text-headline-sm font-semibold text-on-primary">Clínica Nuestra Señora</span>
+        </div>
+        <p class="font-body-sm text-body-sm opacity-80 leading-relaxed">
+          Comprometidos con la salud y el bienestar de nuestra comunidad a través de una atención médica de excelencia y
+          trato humano diferenciado.
+        </p>
+        <div class="flex gap-md">
+          <a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed transition-colors"
+            href="#">
+            <span class="material-symbols-outlined text-[18px]">public</span>
+          </a>
+          <a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed transition-colors"
+            href="#">
+            <span class="material-symbols-outlined text-[18px]">share</span>
+          </a>
+          <a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed transition-colors"
+            href="#">
+            <span class="material-symbols-outlined text-[18px]">thumb_up</span>
+          </a>
+        </div>
+      </div>
+      <div class="space-y-md">
+        <h5 class="font-headline-sm text-headline-sm text-on-primary">Enlaces Rápidos</h5>
+        <nav class="flex flex-col gap-sm">
+          <a class="font-body-sm text-body-sm text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all"
+            href="#inicio">Inicio</a>
+          <a class="font-body-sm text-body-sm text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all"
+            href="#servicios">Nuestros Servicios</a>
+          <a class="font-body-sm text-body-sm text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all"
+            href="#especialistas">Equipo Médico</a>
+          <a class="font-body-sm text-body-sm text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all"
+            href="#citas">Citas Online</a>
+        </nav>
+      </div>
+      <div class="space-y-md">
+        <h5 class="font-headline-sm text-headline-sm text-on-primary">Información</h5>
+        <nav class="flex flex-col gap-sm">
+          <a class="font-body-sm text-body-sm text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all"
+            href="#">Privacidad</a>
+          <a class="font-body-sm text-body-sm text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all"
+            href="#">Términos</a>
+          <a class="font-body-sm text-body-sm text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all"
+            href="#">Portal del Paciente</a>
+          <a class="font-body-sm text-body-sm text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all"
+            href="#">Seguros</a>
+        </nav>
+      </div>
+      <div class="space-y-md">
+        <h5 class="font-headline-sm text-headline-sm text-on-primary">Newsletter</h5>
+        <p class="font-body-sm text-body-sm opacity-80">Recibe consejos de salud y novedades en tu correo.</p>
+        <div class="flex gap-xs">
+          <input
+            class="bg-white/10 border-none rounded px-md py-2 w-full text-on-primary text-sm focus:ring-1 focus:ring-secondary-fixed transition-all"
+            placeholder="Tu email" type="email">
+          <button
+            class="bg-secondary-fixed text-on-secondary-fixed px-md py-2 rounded font-bold hover:bg-white transition-colors">OK</button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="max-w-container-max mx-auto px-md mt-xl pt-md border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-md">
+      <p class="font-body-sm text-body-sm opacity-60">© 2024 Clínica Nuestra Señora. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-xs opacity-60">
+        <span class="material-symbols-outlined text-[16px]">verified_user</span>
+        <span class="font-label-md text-label-md uppercase tracking-tighter">Centro Sanitario Autorizado</span>
+      </div>
+    </div>
+  </footer>
+  <!-- FAB -->
+  <a class="fixed bottom-md right-md z-40 bg-secondary text-on-secondary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all md:hidden"
+    href="#citas">
+    <span class="material-symbols-outlined">calendar_month</span>
+  </a>
+  <script>
+    // Micro-interactions and scroll effects
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.querySelector('header');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          header.classList.add('py-0', 'h-16');
+          header.classList.remove('h-20');
+        } else {
+          header.classList.add('h-20');
+          header.classList.remove('py-0', 'h-16');
+        }
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
